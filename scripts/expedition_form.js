@@ -32,3 +32,4 @@ const expeditionConverter = {
         const data = snapshot.data(options);
         return new expedition_class(data.name, data.date, data.description);
     }
+};
