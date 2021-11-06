@@ -5,5 +5,23 @@
 </head>
 <body>
 	Map of Arctic
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyBbWfTzn31Jtt1jRUfdeXKp8ZrWKvvvYac",
+			authDomain: "mapped-app.firebaseapp.com",
+			projectId: "mapped-app",
+			storageBucket: "mapped-app.appspot.com",
+			messagingSenderId: "456664625346",
+			appId: "1:456664625346:web:03c94c95935a29ab260b5b"
+		};
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+	</script>
+	<script src="./scripts/map.js"></script>
 </body>
 </html>
