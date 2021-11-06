@@ -12,7 +12,7 @@ setDoc(expedition_form, { capital: true}, {merge: true});
 class expedition_class {
     constructor (name, date, description) {
         this.name = name;
-        this.date = state;
+        this.date = date;
         this.description = description;
     }
     toString() {
