@@ -19,3 +19,4 @@ class expedition_class {
         return this.name + ', ' + this.date + ', ' + this.description;
     }
 }
+
