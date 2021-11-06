@@ -7,5 +7,6 @@ function addExpedition()
 	let newLocation = location.href.split('/mapped/')[0];
 
 	newLocation += '/mapped/expedition_form.html';
+	console.log("New location: ", newLocation);
 	location = newLocation;
 }
