@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>
+            function get_image_list(images) {
+                result = [];
+                alert("typeof(image).files[0] = " + images.src);
+                    for (var i = 0; i < images.files.length; i++) {
+                        result[i] = images.files[i];
+                    }
+                    return result;
+            }
+            function get_form() {
+                var dict = {};
+                dict['name'] = document.getElementById('name').value;
+                dict['date'] = document.getElementById('date').value;
+                dict['images'] = get_image_list(document.getElementById('images'));
+                dict['description'] = document.getElementById('description').value;
+
+                //for(var key in dict) {
+                //    alert("dict[" + key + "] = " + dict[key] + "; typeof() = " + typeof(dict[key]));
+                //}
+                show_image(dict);
+                return dict
+            }
+            function show_image(dict) {
+                var img = document.createElement("img");
+                alert("0");
+                img.src = dict['images'][0].src;
+                alert("1");
+                img.width = 100;
+                alert("2");
+                img.height = 100;
+                alert("3");
+
+                document.body.appendChild(img);
+            }
+        </script>
     </head>
 <body>
+        <p>Expedition name: <input type="text" name="ex_name" id="name"></p>
+        <p>Expedition date: <input type="date" name="ex_date" id="date"></p>
+        <p>Images: <input type="file" name="images" accept="image/*" id="images" multiple></p>
+        <p>Write a short description of the expedition: </p>
+        <p><textarea id="description" name="description" rows="4" cols="50"></textarea></p>
+        <button onclick="get_form()">Submit</button>
 
-    <form name="expedition_form">
-        <p>Expedition name: <input type="text" name="ex_name"></p>
-        <p>Expedition date: <input type="date" name="ex_date"></p>
-        <p>Images: <input type="file" name="images" accept="image/*" multiple></p>
-        <p> Write a short description of the expedition: </p>
-        <p>
-            <textarea id="description" name="description" rows="4" cols="50"> 
-            </textarea></p>
-        <input type="submit" value="Submit">
-    </form>
-
+        <button onclick="show_image()">Debug</button>
 </body>
 </html>
